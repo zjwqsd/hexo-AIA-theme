@@ -27,7 +27,7 @@
 }
 
 .introduction{
-    background-color: #585c70;
+    background-color: #31333f;
     color: white;
     height: 250px;
     display: flex;
@@ -36,15 +36,7 @@
     font-size: 20px;
     line-height: 1.8em;
 }
-footer{
-    background-color: black;
-    color: rgb(193, 193, 193);
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
+
 .news{
     display: flex;
 }
