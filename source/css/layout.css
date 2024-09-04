@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.content{
+    margin-top: 80px;
+}
+
+/* 代码块样式 */
+code, pre {
+    font-family: 'Consolas', 'Courier New', monospace; /* VS Code 使用的字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: #c1caa5; /* 背景颜色 */
+    color: #282525; /* 文本颜色 */
+    padding: 0px; /* 内边距 */
+    border-radius: 5px; /* 圆角 */
+    overflow: auto; /* 允许滚动 */
+}
+

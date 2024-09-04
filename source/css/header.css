@@ -1,0 +1,54 @@
+
+header{
+    background-color: black;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+header h1{
+    color: white;
+    position: absolute;
+    left: 120px;
+    top: 0;
+    line-height: 80px;
+    width: 210px;
+    text-indent: -9999px;
+}
+header .logo {
+    float: left;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 80px;
+    top: 0;
+    line-height: 80px;
+    width: 350px;
+}
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+header .logo span {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+header li{
+    display: inline;
+    margin-right: 4vw;
+}
+header ul{
+    position: absolute;
+    right: 5vw;
+    top: 0;
+    line-height: 80px;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+header a:hover{
+    text-decoration: underline;
+}
