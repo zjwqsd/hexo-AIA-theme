@@ -1,0 +1,49 @@
+/* footer */
+body{
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+html{
+    position: relative;
+    min-height: 100%;
+}
+footer{
+    width: 100%;
+    position: absolute;
+}
+/* footer */
+
+.post{
+    display: flex;
+}
+
+/* .sidebar {
+    width: 250px; 
+    background-color: rgb(188, 243, 210);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    height: 100%;
+} */
+
+.post-content{
+    background-color: rgb(248, 241, 231);   
+    flex: 1;
+    padding: 50px;
+    margin: 20px 100px 10px 300px;
+    border-radius: 10x;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    line-height: 2em;
+    width: 600px;
+}
+.post-content img{
+    max-width: 80%;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+}
+.post-content h1{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+

@@ -1,5 +1,19 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
+</head>
 
-<%- partial('_partial/sidebar') %>
-<article class="post-content">
-    <%- page.content %>
-</article>
+
+<section class="post">
+    <div class="sidebar">
+        <%- partial('_partial/sidebar') %>
+    </div>
+    
+    <article class="post-content">
+        <h1> <%- page.title %> </h1>
+        <p class="post-meta">
+            作者: <span class="post-author"><%= page.author %></span> | 
+            发布日期: <span class="post-date"><%= page.date %></span>
+        </p>
+        <%- page.content %>
+    </article>
+</section>

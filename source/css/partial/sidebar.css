@@ -1,0 +1,93 @@
+
+/* 侧边目录栏样式 */
+#tree {
+    position: fixed;
+    top: 80px; /* 给导航栏留出空间 */
+    left: 0px; /* 初始状态显示 */
+    width: 250px; /* 侧边栏宽度 */
+    padding: 10px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    height: calc(100vh - 60px); /* 使侧边栏高度占满整个视口，减去导航栏和搜索框的高度 */
+    overflow-y: auto; /* 允许垂直滚动 */
+    color: #000; /* 设置字体颜色为黑色 */
+    transition: left 0.3s ease; /* 添加过渡效果 */
+}
+
+#tree.invisible {
+    left: -250px; /* 隐藏侧边栏 */
+}
+
+#tree ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#tree ul li {
+    margin: 15px 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+#tree ul li a {
+    text-decoration: none;
+    color: #000; /* 设置链接字体颜色为黑色 */
+    display: flex;
+    align-items: center;
+}
+
+#tree ul li a .fa {
+    margin-right: 5px;
+}
+
+#tree ul li a:hover {
+    color: #007bff;
+}
+
+#tree ul li ul {
+    display: block; /* 默认显示子目录 */
+}
+
+/* 黑夜模式样式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode #search {
+    background-color: #333;
+    border-color: #555;
+}
+
+body.dark-mode #tree {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0; /* 黑夜模式下字体颜色 */
+}
+
+body.dark-mode #tree a {
+    color: #e0e0e0; /* 黑夜模式下链接字体颜色 */
+}
+
+body.dark-mode #tree a:hover {
+    color: #fff;
+}
+
+
+#toggle-sidebar {
+    position: fixed;
+    top: 40px; /* 调整位置到顶部 */
+    left: 20px; /* 调整位置到左侧 */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    z-index: 1001; /* 确保按钮在侧边栏上方 */
+    width: auto; /* 确保按钮宽度自适应内容 */
+    height: auto; /* 确保按钮高度自适应内容 */
+    display: inline-block; /* 确保按钮不会占据整个行 */
+}

@@ -4,7 +4,7 @@
 </head>
 <body>
     <% site.posts.forEach(function(post) { %>
-        <% if (post.mytag === 'activity') { %>
+        <% if (post.type === 'activity') { %>
         <div class="content-block">
             <h2 class="content-title">
                 <%= post.title %>

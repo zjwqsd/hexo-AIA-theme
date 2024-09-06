@@ -1,9 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #5f4d4d;
-    margin: 0;
-    padding: 0;
-}
+/* footer */
 body{
     margin-top: 100px;
     margin-bottom: 60px;
@@ -15,6 +10,15 @@ html{
 footer{
     width: 100%;
     position: absolute;
+}
+/* footer */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin-top: 100px;
+    /* margin: 0; */
+    padding: 0;
 }
 
 .content-block {

@@ -1,0 +1,126 @@
+/* 白天模式 */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.post-container {
+    max-width: 1000px; /* 增加最大宽度 */
+    margin: 20px  100px 10px 300px; /* 调整右侧边距 */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.post-title {
+    font-size: 2.5em;
+}
+
+.post-meta {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 黑夜模式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .post-header {
+    border-bottom: 1px solid #444;
+}
+
+body.dark-mode .post-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-meta {
+    color: #bbb;
+}
+
+/* 其他内容样式 */
+.post-content {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.post-content p {
+    margin: 0 0 20px;
+}
+
+.post-content h2, .post-content h3 {
+    margin-top: 30px;
+    color: #333;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-content blockquote {
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ccc;
+}
+
+.post-content code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* 黑夜模式下的其他内容样式 */
+body.dark-mode .post-content {
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-content h2, body.dark-mode .post-content h3 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-content blockquote {
+    background-color: #2e2e2e;
+    border-left: 5px solid #555;
+}
+
+body.dark-mode .post-content code {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+/* 按钮样式 */
+#toggle-dark-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#toggle-dark-mode:hover {
+    background-color: #0056b3;
+}

@@ -98,9 +98,18 @@
         tree.innerHTML = `
             <ul>
                 ${Object.keys(directoryStructure).map(dir => `
-                    ${directoryStructure[dir].files.map(file => `
-                        <li><a href="/${file.url}">${file.title}</a></li>
-                    `).join('')}
+                    <li>
+                        <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
+                            ${dir}
+                        </a>
+                        ${directoryStructure[dir].activate ? `
+                            <ul>
+                                ${directoryStructure[dir].files.map(file => `
+                                    <li><a href="/${file.url}">${file.title}</a></li>
+                                `).join('')}
+                            </ul>
+                        ` : ''}
+                    </li>
                 `).join('')}
             </ul>
         `;

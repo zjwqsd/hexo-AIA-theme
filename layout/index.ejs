@@ -11,12 +11,12 @@
             <%= post.title %>
         </h2>
 
-        <% if (post.mytag === 'learning') { %>
-            <h3 class="content-mytag">learning</h3>
-        <% } else if (post.mytag === 'activity') { %>
-            <h3 class="content-mytag">activity</h3>
+        <% if (post.type === 'learning') { %>
+            <h3 class="content-type">learning</h3>
+        <% } else if (post.type === 'activity') { %>
+            <h3 class="content-type">activity</h3>
         <% } else { %>
-            <h3 class="content-mytag">未分类</h3>
+            <h3 class="content-type">未分类</h3>
         <% } %>
 
 
