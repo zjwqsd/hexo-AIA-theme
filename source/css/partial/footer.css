@@ -8,15 +8,3 @@ footer{
     font-size: 14px;
     bottom: 0;
 }
-body{
-    margin-top: 100px;
-    margin-bottom: 60px;
-}
-html{
-    position: relative;
-    min-height: 100%;
-}
-footer{
-    width: 100%;
-    position: absolute;
-}
