@@ -1,3 +1,19 @@
+/* footer */
+body{
+    margin-top: 100px;
+    margin-bottom: 60px;
+}
+html{
+    position: relative;
+    min-height: 100%;
+}
+footer{
+    width: 100%;
+    position: absolute;
+}
+/* footer */
+
+
 /* post-AuthorDate 样式 */
 .post-AuthorDate {
     font-size: 14px; /* 设置字体大小 */
@@ -187,4 +203,10 @@
     margin: 24px 0;
     background-color: #e1e4e8;
     border: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .post-content {
+        margin: 20px 10px;
+    }
 }
