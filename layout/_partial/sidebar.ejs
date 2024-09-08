@@ -5,7 +5,6 @@
 
 <% global.directoryStructure = {}; %>
 <% const currentPostType = page.type; %> <!-- 获取当前文章的类型 -->
-<% console.log(currentPostType); %>
 <% site.posts.forEach(function(post) { %>
     <% if (post.type === currentPostType) { %> <!-- 只处理相同类型的文章 -->
         <% raw_path = post.source %>
@@ -92,6 +91,8 @@
         setCookie('expandedDirs', updatedExpandedDirs.join(','), 7); // Store updated expanded directories in cookie
         renderTree();
     }
+
+
 
     function renderTree() {
         const tree = document.getElementById('tree');

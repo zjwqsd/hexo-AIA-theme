@@ -2,9 +2,9 @@
 /* 侧边目录栏样式 */
 #tree {
     position: fixed;
-    top: 80px; /* 给导航栏留出空间 */
-    left: 0px; /* 初始状态显示 */
-    width: 250px; /* 侧边栏宽度 */
+    top: 80px;
+    left: 0;
+    width: 250px; 
     padding: 10px;
     background-color: #fff;
     border-right: 1px solid #ddd;
@@ -48,38 +48,13 @@
     display: block; /* 默认显示子目录 */
 }
 
-/* 黑夜模式样式 */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode #search {
-    background-color: #333;
-    border-color: #555;
-}
-
-body.dark-mode #tree {
-    background-color: #333;
-    border-color: #555;
-    color: #e0e0e0; /* 黑夜模式下字体颜色 */
-}
-
-body.dark-mode #tree a {
-    color: #e0e0e0; /* 黑夜模式下链接字体颜色 */
-}
-
-body.dark-mode #tree a:hover {
-    color: #fff;
-}
-
-
 #toggle-sidebar {
     position: fixed;
-    top: 40px; /* 调整位置到顶部 */
-    left: 20px; /* 调整位置到左侧 */
+    top: 100px; /* 调整位置到顶部 */
+    left: 220px; /* 调整位置到左侧 */
+    transform: translateY(-50%); /* 垂直居中 */
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: rgb(0,0,0,0.5);
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -87,7 +62,11 @@ body.dark-mode #tree a:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 16px;
     z-index: 1001; /* 确保按钮在侧边栏上方 */
-    width: auto; /* 确保按钮宽度自适应内容 */
-    height: auto; /* 确保按钮高度自适应内容 */
+    width: 52px; /* 确保按钮宽度自适应内容 */
+    height: 38px; /* 确保按钮高度自适应内容 */
     display: inline-block; /* 确保按钮不会占据整个行 */
+}
+
+#toggle-sidebar i {
+    margin-right: 5px; /* 图标与文本之间的间距 */
 }

@@ -2,6 +2,8 @@
 title: 自学指南
 type: learning
 abbrlink: 999555316
+description: 对于Datawhale提供的人工智能自学教程，我们作为帕鲁先进行了学习，并对其中课程的质量和必要性提供了一点参考建议。
+date: 2024-02-17
 ---
 
 

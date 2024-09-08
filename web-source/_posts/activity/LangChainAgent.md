@@ -1,16 +1,19 @@
 ---
 title: 11月技术例会：上手LangChain Agent开发
 abbrlink: 1389444303
-date: 2024-09-05 14:24:24
+date: 2023-12-10 
 type: activity
+author: 南的AIA
+description: 关于LangChain Agent开发的入门学习
 ---
 
->  2023年11月26日，南大AIA在南京大学仙林校区举办了本学期第一次技术例会。本次例会与未来开发者协会合作开展，内容主要关于LangChain Agent开发的入门学习。
+2023年11月26日，南大AIA在南京大学仙林校区举办了本学期第一次技术例会。本次例会与未来开发者协会合作开展，内容主要关于LangChain Agent开发的入门学习。
 
 
 ![](/images/LangChainAgent/1.webp)
 
 ![](/images/LangChainAgent/2.webp)
+
 
 
 ## 开发环境的安装和演示
@@ -74,13 +77,13 @@ o Retrieval：很多LLM应用需要用户特定的数据，这些数据不是模
 LangChains可以帮助我们模块化地做到这一点：
 
 ```
-chat_prompt ChatPromptTemplate. from_messages([ ('system', template),
-('human', human_template), ])
-chain = chat_prompt | ZhipuAILLM(model='chatglm_t|
+chat_prompt ChatPromptTemplate. from_messages([ 
+	('system', template),
+	('human', human_template), 
+])
+chain = chat_prompt | ZhipuAILLM(model='chatglm_turbo')
 CommaSeparatedListOutputParser()
 ```
-
-
 
 这也有助于我们编写一套流程，比如先想一个公司名称再想一个口号，那么这两个操作可以放到一个链上。
 
@@ -91,18 +94,23 @@ CommaSeparatedListOutputParser()
 尽管我们网页中使用的大模型一般可以记住上下文，调用API的时候一般都要自己提供上下文。这不难但是很烦，因此LangChain为我们提供了便利的方法：
 
 ```
-template You are a nice chatbot having a conversation with a human. Previous conversation:
+template = """You are a nice chatbot having a conversation with a human. 
+
+Previous conversation:
 {chat_history}
+
  New human question: {question}
 ```
 
 ```
-Response:
-prompt PromptTemplate. from_template(template)
-memory ConversationBufferMemory(memory_key='chat_history') llm = ZhipuAILLM(model='chatglm_turbo',temperature= chain LLMChain(llm=llm, prompt=prompt, memory=memory) 
+Response:"""
+
+prompt = PromptTemplate. from_template(template)
+memory = ConversationBufferMemory(memory_key='chat_history') 
+
+llm = ZhipuAILLM(model='chatglm_turbo',temperature= 
+chain = LLMChain(llm=llm, prompt=prompt, memory=memory) 
 ```
-
-
 
 简单的创建一个memory即可自动将聊天上下文提供到prompt中。
 
@@ -112,17 +120,21 @@ memory ConversationBufferMemory(memory_key='chat_history') llm = ZhipuAILLM(mode
 
 ```
 loader = TextLoader('流浪地球.txt')
-documents loader. load()
-text_splitter RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200) texts text splitter. split documents (documents)
+documents = loader.load()
+
+text_splitter RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200) texts text splitter.split documents (documents)
+
 embeddings ZhipuAIEmbeddings()
-db = FAISS. from_documents(texts, embeddings) retriever db. as retriever()
+db = FAISS. from_documents(texts, embeddings) 
+
+retriever = db.as_retriever()
 docs = retriever.get_relevant_documents("流浪地球计划")
 ```
-
-
 
 在这里，LangChain会使用词嵌入向量（就是用一堆数字表示一个单词）来在文档中查找与问题（在这里是“流浪地球计划”）相关的内容，并将它提供给大模型，供其参考。
 
 在会上，我们还结合使用了这几种技术，通过调用大语言模型制作了一个带文档查询和记忆功能的聊天机器人。
 
  
+
+[阅读原文](https://mp.weixin.qq.com/s/wXQhfwVF1zymplnsb34SQQ)
