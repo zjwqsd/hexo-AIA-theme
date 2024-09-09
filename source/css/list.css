@@ -60,3 +60,27 @@ body {
 .same-line {
     display: inline-block;
 }
+
+/* 黑夜模式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .content-block {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .content-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .content-intro {
+    color: #ccc;
+}
+
+body.dark-mode .content-entry {
+    color: #66b2ff;
+}

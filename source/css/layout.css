@@ -6,15 +6,4 @@
     margin-top: 80px;
 }
 
-/* 代码块样式 */
-code, pre {
-    font-family: 'Consolas', 'Courier New', monospace; 
-    font-size: 14px; 
-    background-color: #c1caa5; 
-    color: #282525;
-    padding: 0px;
-    border-radius: 5px; 
-    overflow: auto; 
-    margin-bottom: 15px;
-}
 

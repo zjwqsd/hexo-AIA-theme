@@ -105,3 +105,13 @@
     font-size: 14px;
     line-height: 1.6em;
 }
+
+.more a {
+    text-decoration: none; /* 去掉链接下划线 */
+    color: inherit; /* 继承父元素的颜色 */
+    display: block; /* 将链接设置为块级元素 */
+}
+
+.more a:hover {
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}

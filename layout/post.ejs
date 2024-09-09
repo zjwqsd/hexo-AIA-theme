@@ -1,6 +1,5 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/post.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 
@@ -8,7 +7,9 @@
     <div class="sidebar">
         <%- partial('_partial/sidebar') %>
     </div>
-    
+    <div>   
+        <%- partial('_partial/mathjax', null, {cache: true}) %> <!-- 引用 MathJax -->
+    </div>
     <div class="post-content">
         <h1> <%- page.title %> </h1>
         <% 
@@ -17,9 +18,9 @@
         %>
         <p class="post-meta">
             <% if (page.author) { %>
-                <span class="post-AuthorDate">作者:  <%= page.author %> | </span>
+                <span class="post-AuthorDate">作者: <%= page.author %>  |</span>
             <% } %>
-                <span class="post-AuthorDate">发布日期:  <%= formattedDate %></span>
+                <span class="post-AuthorDate">发布日期: <%= formattedDate %></span>
         </p>
         <%- page.content %>
     </div>

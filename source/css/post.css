@@ -17,7 +17,7 @@ footer{
 /* post-AuthorDate 样式 */
 .post-AuthorDate {
     font-size: 14px; /* 设置字体大小 */
-    color: #6a737d; /* 设置字体颜色 */
+    color: #858f9b; /* 设置字体颜色 */
     margin-right: 10px; /* 设置右外边距 */
     display: inline-block; /* 设置为内联块元素 */
     /* font-style: italic; 设置字体样式为斜体 */
@@ -33,7 +33,7 @@ footer{
     /* padding: 20px; */
     /* margin-left: 250px; */
     padding: 30px 70px;
-    margin: 20px 100px 10px 300px;
+    margin: 20px 120px 10px 320px;
 
     border: 1px solid #e1e4e8;
     border-radius: 6px;
@@ -135,12 +135,18 @@ footer{
 }
 
 .post-content pre code {
+    font-family: 'Consolas', 'Courier New', monospace; 
+    /* margin-bottom: 15px; */
     display: inline;
     padding: 0;
     margin: 0;
     font-size: 100%;
     background: none;
     border: 0;
+}
+
+code, pre {
+    margin-bottom: 15px;
 }
 
 .post-content table {
@@ -181,13 +187,6 @@ footer{
     background-color: #ffffff;
 }
 
-/* .post-content img{
-    max-width: 80%;
-    height: auto;
-    margin: 10px auto;
-    display: block;
-} */
-
 .post-content a {
     color: #0366d6;
     text-decoration: none;
@@ -205,8 +204,65 @@ footer{
     border: 0;
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .post-content {
         margin: 20px 10px;
     }
+} */
+
+
+/* 黑夜模式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .post-content h1,
+body.dark-mode .post-content h2,
+body.dark-mode .post-content h3,
+body.dark-mode .post-content h4,
+body.dark-mode .post-content h5,
+body.dark-mode .post-content h6 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-content blockquote {
+    color: #ccc;
+    border-left-color: #555;
+}
+
+body.dark-mode .post-content code {
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* background-color: #2d2d2d; */
+    color: #e0e0e0;
+}
+
+body.dark-mode .post-content pre {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .post-content table {
+    border-color: #444;
+}
+
+body.dark-mode .post-content table tr {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .post-content table tr:nth-child(2n) {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode .post-content hr {
+    background-color: #444;
+}
+
+body.dark-mode .post-content a {
+    color: rgb(122, 174, 235);
 }
