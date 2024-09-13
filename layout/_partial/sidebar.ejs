@@ -5,7 +5,6 @@
 
 <% global.directoryStructure = {}; %>
 <% const currentPostType = page.type; %> 
-<!-- <% console.log(currentPostType); %> -->
 <% site.posts.forEach(function(post) { %>
     <% if (post.type === currentPostType) { %> <!-- 只处理相同类型的文章 -->
         <% raw_path = post.source %>
@@ -14,20 +13,13 @@
         <!-- [ 'Datawhale.md' ] -->
         <% 
             <!-- console.log(path); -->
-            <!-- const dir = path[0]; -->
-            <!-- const file = path[1]; -->
-            
-            let dir, file;
-            if (path.length === 2) {
-                dir = path[0];
-                file = path[1];
-            } else if (path.length === 1) {
-                dir = currentPostType;
-                file = path[0];
-            }
-            console.log(dir);
-            console.log(file);
-
+            let dir, file, relativePath;
+            file = path[path.length - 1]; 
+            dir = path.slice(0, -1).join('/'); 
+            relativePath = path.join('/');
+            <!-- console.log(dir); -->
+            <!-- console.log(file); -->
+            <!-- console.log(relativePath); -->
 
             if (global.directoryStructure[dir] === undefined) {
                 global.directoryStructure[dir] = { files: [], activate: false };
@@ -44,8 +36,7 @@
     <div id="tree">
         <ul>
             <% Object.keys(global.directoryStructure).forEach(function(dir) { %>
-                <!-- <% if (dir !== currentPostType) { %>  -->
-                    <!-- <% console.log("folderr"); %> -->
+                <% if (dir) { %> <!-- 仅当 dir 不为空时渲染文件夹样式 -->
                     <li>
                         <a href="#" class="directory" onclick="toggleSubdirectory('<%= dir %>')"><i class="fa fa-folder"></i>
                             <%= dir %>
@@ -58,7 +49,11 @@
                             </ul>
                         <% } %>
                     </li>
-                <!-- <% } %> -->
+                <% } else { %> <!-- 如果 dir 为空，直接渲染文件 -->
+                    <% global.directoryStructure[dir].files.forEach(function(file) { %>
+                        <li><a href="/<%= file.url %>"><%= file.name %></a></li>
+                    <% }); %>
+                <% } %>
             <% }); %>
         </ul>
     </div>
@@ -112,24 +107,29 @@
     }
 
 
-
     function renderTree() {
         const tree = document.getElementById('tree');
         tree.innerHTML = `
             <ul>
                 ${Object.keys(directoryStructure).map(dir => `
-                    <li>
-                        <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
-                            ${dir}
-                        </a>
-                        ${directoryStructure[dir].activate ? `
-                            <ul>
-                                ${directoryStructure[dir].files.map(file => `
-                                    <li><a href="/${file.url}">${file.title}</a></li>
-                                `).join('')}
-                            </ul>
-                        ` : ''}
-                    </li>
+                    ${dir ? `
+                        <li>
+                            <a href="#" class="directory" onclick="toggleSubdirectory('${dir}')"><i class="fa fa-folder"></i>
+                                ${dir}
+                            </a>
+                            ${directoryStructure[dir].activate ? `
+                                <ul>
+                                    ${directoryStructure[dir].files.map(file => `
+                                        <li><a href="/${file.url}">${file.title}</a></li>
+                                    `).join('')}
+                                </ul>
+                            ` : ''}
+                        </li>
+                    ` : `
+                        ${directoryStructure[dir].files.map(file => `
+                            <li><a href="/${file.url}">${file.title}</a></li>
+                        `).join('')}
+                    `}
                 `).join('')}
             </ul>
         `;

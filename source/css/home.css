@@ -76,10 +76,20 @@
 .info h2{
     font-size: 40px;
     margin-bottom: 30px;
+    text-align: center;
 }
 .info p{
     text-align: center;
     line-height: 2em;
+}
+.info a{
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.info a:hover{
+    background-color: #f1f1f1;
 }
 
 .more{
